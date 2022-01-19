@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('.grid-container');
 const buttonContainer = document.querySelector('.buttons');
+const topButtons = document.querySelector('.top-buttons');
 const btnBlack = document.createElement('button');
 const btnGray = document.createElement('button');
 const btnRainbow = document.createElement('button');
@@ -7,6 +8,8 @@ const btnRainbow = document.createElement('button');
 const btnGridSize = document.createElement('button');
 const btnEraser = document.createElement('button');
 const btnReset = document.createElement('button');
+const btnGridLines = document.createElement('button');
+let x = 16;
 
 function makeTable (cols, rows){
     for (let i = 0; i < (cols * rows); i++){
@@ -17,21 +20,20 @@ function makeTable (cols, rows){
         gridContainer.appendChild(div).classList.add('box');
     }
 }
-let size = prompt("How many rows and columns would you like the grid to have?");
-makeTable(size,size);
+makeTable(x,x);
 
-/*
+//let size = prompt("How many rows and columns would you like the grid to have?");
+//makeTable(size,size);
+
 function changeGridSize() {
     btnGridSize.textContent = "Change Grid Size"
     btnGridSize.addEventListener('click', () => {
-        //let size = prompt("How many rows and columns would you like the grid to have?");
-        makeTable(size, size);
+        x = prompt("How many rows and columns would you like the grid to have?");
     })
-    buttonContainer.appendChild(btnGridSize).classList.add('btn');
+    topButtons.appendChild(btnGridSize).classList.add('btn');
 }
 
 changeGridSize();
-*/
 
 function grayColor() {
     const boxes = gridContainer.querySelectorAll('.box');
@@ -94,7 +96,7 @@ function reset() {
         boxes.forEach(box => box.style.background = 'white');
         }
     )
-    buttonContainer.appendChild(btnReset).classList.add('btn');
+    topButtons.appendChild(btnReset).classList.add('btn');
 }
 
 reset();
