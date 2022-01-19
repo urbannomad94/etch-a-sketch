@@ -9,7 +9,6 @@ const btnGridSize = document.createElement('button');
 const btnEraser = document.createElement('button');
 const btnReset = document.createElement('button');
 const btnGridLines = document.createElement('button');
-let x = 16;
 
 function makeTable (cols, rows){
     for (let i = 0; i < (cols * rows); i++){
@@ -20,15 +19,13 @@ function makeTable (cols, rows){
         gridContainer.appendChild(div).classList.add('box');
     }
 }
-makeTable(x,x);
-
-//let size = prompt("How many rows and columns would you like the grid to have?");
-//makeTable(size,size);
+makeTable(16,16);
 
 function changeGridSize() {
     btnGridSize.textContent = "Change Grid Size"
     btnGridSize.addEventListener('click', () => {
-        x = prompt("How many rows and columns would you like the grid to have?");
+        let x = prompt("How many rows and columns would you like the grid to have?");
+        makeTable(x,x);
     })
     topButtons.appendChild(btnGridSize).classList.add('btn');
 }
