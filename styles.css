@@ -1,0 +1,40 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+    background-color: lightblue;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.section h1 {
+    align-self: center;
+    top: 10px;
+    color:black;
+    font-size: 40px;
+}
+
+.grid-container {
+    width: 600px;
+    height: 600px;
+    display: grid;
+    align-self: center;
+    margin-bottom: 15px;
+    background-color: white;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    height: 25px;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    color: darkcyan;
+}
